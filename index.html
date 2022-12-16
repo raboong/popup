@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ml>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
             right: 30px;
             background: none;
             border: 1px solid #ccc;
-            font: 0.8em; 
+            font-size: 0.8em; 
             /* 1em=100% */
             cursor: pointer;
         }
@@ -30,22 +30,23 @@
             left: 50px;
             top: 100px;
             z-index: 1000;
-            font-size: 13px;
         }
+
         h1 {
             text-align: center;
             font-size: 20px;
         }
-        .notice1 img {
+        #notice1 {
             position: absolute;
             left: 500px;
             top: 100px;
+            z-index: 1400;
+            /* notice1 img로 하면 안됨.왜냐하면 img는 공간안에 불러오는거기 때문에 img를 넣어버리면 버튼이나 다른걸 제어할 수 없음 */
         }
-        .notice1 button {
+        #notice1 > button {
             position: absolute;
-            right: 280px;
-            bottom: 660px;
-            z-index: 1500;
+            right: 20px;
+            bottom: 60px;
             cursor: pointer;
         }
     </style>
@@ -129,8 +130,8 @@ Doctus evertitur has finitas d omnis spatio penatibus aut sedulitatem. Patiatur 
         팝업창 띄울떄 필요함, 현장에서는 잘 안씀 -->
     </div>
 
-    <div class="notice1">
-        <img src="popup_01.jpg" alt="팝업창">
+    <div id="notice1">
+        <img src="images/popup_01.jpg" alt="팝업창">
         <button>닫기</button>
     </div>    
 
@@ -144,10 +145,10 @@ Doctus evertitur has finitas d omnis spatio penatibus aut sedulitatem. Patiatur 
             // document.querySelector('.popup' -> -를).style.display='none' -> 이렇게;
         });
 
-        let CloseeBtn = document.querySelector('.notice1 > button');
+        let CloseeBtn = document.querySelector('#notice1 > button');
 
         CloseeBtn.addEventListener('click', function(){
-            document.querySelector('.notice1').style.display='none';
+            document.querySelector('#notice1').style.display='none';
         })
     </script>
     
