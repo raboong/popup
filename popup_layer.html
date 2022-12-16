@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #ccc;
+        }
+        .popup {
+            background: #fff;
+            width: 400px;
+            height: 250px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .popup button {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            background: none;
+            border: 1px solid #ccc;
+            font-size: 0.8em; 
+            /* 1em=100% */
+            cursor: pointer;
+        }
+        #notice {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            z-index: 1000;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 20px;
+        }
+        #notice1 {
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            z-index: 1400;
+            /* notice1 img로 하면 안됨.왜냐하면 img는 공간안에 불러오는거기 때문에 img를 넣어버리면 버튼이나 다른걸 제어할 수 없음 */
+        }
+        #notice1 > button {
+            position: absolute;
+            right: 20px;
+            bottom: 60px;
+            cursor: pointer;
+        }
+    </style>
+    <title>레이어 팝업창</title>
+</head>
+<body>
+    <p>문서를 열면 레이어 팝업창이 그대로 보인다.</p>
+    <pre>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convincere intereant menandro acri augeri dialectica pleniorem simul definitiones minime. Nosque putet democrito ipsum, libidinosarum depulsa, etiamsi probet aeque ignorare. Hominem simulent affert multis transferrem debemus tellus miraretur, cursu potiora. Discordiae pecunias, fabulis beatam quoddam caelo, certamen. At verbis dissident, fruenda quia iusteque. 
+
+Primus aliena quanta nisi vera homo. Quaeritur malarum saperet gravitate idque negent laus. Dividendo tantam fortunae me subtilius praesenti chorusque. Cuius maximos poenis plato gessisse. Metus dolere firmissimum, parendum fecit scribi, vicinum ignavi. 
+
+Persius tuum indocti tempus facilius eum chrysippi, lucifugi. Tali vocet desiderent illustriora theseo mi magnis menandro patrioque. Parturient dicunt certe esse epularum tu vera novi. Expedire oderit pugnantibus, epicuri remotis desiderare prorsus inciderint, epicuri. Tum senserit magnam legant iucunda. Hymenaeos atomum aristippus complectitur pellat statuerunt inflammati nascetur expetenda stare. Indignius bonarum noctesque constituto animal specie impedit geometriaque. 
+
+Defensa sermo, contumeliae consentaneum involuta video solis, placerat patientia accedit permulta. Fuisset quaerimus suas defendere dolemus desideraturam. Secumque eae verear percipiatur inscientia, atque praeclare difficile iste reprehensa iucunditatem. Iusto petentium statue quae, fidem gustare voluit. Nosmet eademque stabilique istae minimum proprius iucundum fana. Erga potione accurate diligi fringilla quoddam etsi, phaedrum argumentandum. Graviter ruinae, philosophi, praetore iudex propemodum. 
+
+Vituperatoribus ornare, plusque eisque illa. Libero concursionibus his animadversionem infanti dicant adolescens, litora mens intellegunt. Est dicendum primis addidisti asperiores assentiar. Susciperet repellat tuum, discenda desiderare, dediti. Suspicio clarorum ut totam exitum primum conficiuntur, chorusque honesto accusator. Assentior intellegaturque monstret fortitudinem hanc graecis. Operis fruenda conubia negarent atilii instructus aiebat texit noris ignorare. Omittam probabo iudicio instituendarum insidiarum habitant geometriaque, aristippus, gravis sentit. 
+
+Laetetur specie litteras quas graecos malorum aeternum. Officii incidunt numquam conturbamur celeritas sola dicendum, dediti bella inceptos. Quem scribi, cupiditatibusque sublatum, necessitatibus. Ordinem oderis probet labore severa probant modice medium urbes deleniti periculis. Sapientia liberavisse eruditi suam vacuitate probabis praeter praesentium aliena, expedita. 
+
+Reliqui statu quaerendum interrogare t. Spernat illae vigiliae aspernari, expetenda. Animadvertat efficere finis potiendi aliter extremum instructus respirare efficerent numquidnam propterea. Miserum urbes, expedire dignissimos in quicquam, saluto rhoncus cognosci evolutio. Incidunt factorum laudatum angoribus congressus legendi mutans eum evolvendis. Altera metuque dictum oderit efficeret honestum graecis inpendente persecuti. Accessio respondendum, consequentium certa facile suspicio concordia, vestra senectutem amotio. 
+
+Amicitia elaboraret viverra ipsa moderatio clarorum coercendi. Terentianus rationis culpa augendas transferre. Fastidium infinitis, alii dicere utuntur fusce sane. Saluti tum nomini iniucundus patre commodis male amarissimam angere misisti per. Audeam suis laboramus etiamsi intercapedo adversantur. Hostis desistunt, indignius referuntur atque audiebam dis antiquis, urbane facilius. 
+
+Displicet dices utilitas lacus expedita scaevolam succumbere iudicante praetermittatur, artis. Corrigere audiam cognosci andriam lucilius vehicula finxerat legat bene. Condimentum chrysippo natus senectutem elegans egestas didicisse fortunae consuevit. Mox utrumvis, argumentandum coniunctione adoptionem conversam. Atque evolutio leguntur manum reliquaque reprehensiones, secundum praetermittatur putavisset aperta dicere. Isdem eruditus interdictum chremes constituto, putarent accusantium istam venustate timiditatem, invitat. Mihi consectetuer virtutes, unum torquentur vituperari homine. Diesque existimo imperdiet delectatum voce sequimur quaerendi. Fidelissimae sicut isti ponendam, temeritas veritus amici firmissimum muniti exquisitaque me. 
+
+Tamquam concordia dum mi accedere fuisset incorrupte verbis arbitrantur rationis. Placerat evolvendis intus miseram etsi occulta. Facerem quaeritur amici corporis voluptates. Inermis voluptatibus varias amplificarique claudicare possunt amputata, videamus concessum inpendente dicant. Sem aperiam arridens invenerit appellant temperantiam ita intellegebat. Coerceri seiungi familiarem paene sole praetermissum percipiatur aliud imitarentur porro. Libidinibus aptent eventurum fermentum rebus reiciendis praeterierunt contenta una habeat. Incidunt iracundia ponderum ipse reliquarum, fuissent plerumque ipsa sapientia quidam. 
+
+Conducunt aegritudines fecisse voce quo efficeret etsi congressus accedis. Utrisque donec vetuit ullius profecto bestiae remissius physico magnitudinem. Concupiscunt meminit massa medeam efficeretur. Accusata animadversionis partiendo natura iusteque. Consentientis superstitio quantaque futurove politus apertam. Rogatiuncula multavit notae artem platonis tranquilli. Deserere exhorrescere bene leniat saepti depulsa, simulent civitas bene graeco. 
+
+Vestra mirari transferrem veritus privatione inportuno interdum poetis importari numeranda animum. Depravatum eademque idem iniucundus existimo, diis maximo ratione saxum. Aeque alii ferrentur conscientia vias, laboriosam adversantur delectatum correcta. Neglegentur controversia, cohaerescant via plus plura torquent. Erant eademque memoriter confidere certissimam nostro efficiatur te inculta utilitas pertinax. 
+
+Aegritudo malarum coerceri certa clamat, labore. Apte caret fortitudo foris verum. Voluptatem oblivione earum lacus, epicuro, natum dictumst aptent. Fruitur defendere poterimus, referenda delectatio aliquem tractatas quoque, via. Putanda dicebas importari male laboribus. Praeclara labore alias divinum firmissimum calere duce, assentior ero. 
+
+Depravatum imperdiet quisque videmus graecum posset maiestatis generibusque negarent. Sem partiendo videro horum diceret habere stultorum nondum. Scelerisque audiam permanentes diligant torquatus triarius. Certissimam improbis crudelis graecum variari eloquentiam quot. Comit suis singulis mauris legendus primum. Fortunae meo inquit molestiam gaudere seiungi. Fabulas turpis, fama pellat sedatio. Memoriter ea doloremque cognitione abducat, condimentum contenta linguam cognomen purus utinam. Referri solemus fructuosam, voluptates, notae occulta maiora aliquo chaere. 
+
+Doctus evertitur has finitas d omnis spatio penatibus aut sedulitatem. Patiatur diuturnitatem obcaecati conciliant distinguantur ius aequum pellat facilius probo miserius. Unum tempor sit insequitur legimus ludus lectus optimum. Iudicant magnum innumerabiles dignitatis ipsam sol frequenter abducat. Ex nullae continens tota tarentinis. Conficiuntur tu honeste, legantur etiam sensum firmissimum nescio, tellus splendore, perspici. Adversarium numquidnam de, domo, soliditatem pacto praetulerit collegisti provincias.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convincere intereant menandro acri augeri dialectica pleniorem simul definitiones minime. Nosque putet democrito ipsum, libidinosarum depulsa, etiamsi probet aeque ignorare. Hominem simulent affert multis transferrem debemus tellus miraretur, cursu potiora. Discordiae pecunias, fabulis beatam quoddam caelo, certamen. At verbis dissident, fruenda quia iusteque. 
+
+Primus aliena quanta nisi vera homo. Quaeritur malarum saperet gravitate idque negent laus. Dividendo tantam fortunae me subtilius praesenti chorusque. Cuius maximos poenis plato gessisse. Metus dolere firmissimum, parendum fecit scribi, vicinum ignavi. 
+
+Persius tuum indocti tempus facilius eum chrysippi, lucifugi. Tali vocet desiderent illustriora theseo mi magnis menandro patrioque. Parturient dicunt certe esse epularum tu vera novi. Expedire oderit pugnantibus, epicuri remotis desiderare prorsus inciderint, epicuri. Tum senserit magnam legant iucunda. Hymenaeos atomum aristippus complectitur pellat statuerunt inflammati nascetur expetenda stare. Indignius bonarum noctesque constituto animal specie impedit geometriaque. 
+
+Defensa sermo, contumeliae consentaneum involuta video solis, placerat patientia accedit permulta. Fuisset quaerimus suas defendere dolemus desideraturam. Secumque eae verear percipiatur inscientia, atque praeclare difficile iste reprehensa iucunditatem. Iusto petentium statue quae, fidem gustare voluit. Nosmet eademque stabilique istae minimum proprius iucundum fana. Erga potione accurate diligi fringilla quoddam etsi, phaedrum argumentandum. Graviter ruinae, philosophi, praetore iudex propemodum. 
+
+Vituperatoribus ornare, plusque eisque illa. Libero concursionibus his animadversionem infanti dicant adolescens, litora mens intellegunt. Est dicendum primis addidisti asperiores assentiar. Susciperet repellat tuum, discenda desiderare, dediti. Suspicio clarorum ut totam exitum primum conficiuntur, chorusque honesto accusator. Assentior intellegaturque monstret fortitudinem hanc graecis. Operis fruenda conubia negarent atilii instructus aiebat texit noris ignorare. Omittam probabo iudicio instituendarum insidiarum habitant geometriaque, aristippus, gravis sentit. 
+
+Laetetur specie litteras quas graecos malorum aeternum. Officii incidunt numquam conturbamur celeritas sola dicendum, dediti bella inceptos. Quem scribi, cupiditatibusque sublatum, necessitatibus. Ordinem oderis probet labore severa probant modice medium urbes deleniti periculis. Sapientia liberavisse eruditi suam vacuitate probabis praeter praesentium aliena, expedita. 
+
+Reliqui statu quaerendum interrogare t. Spernat illae vigiliae aspernari, expetenda. Animadvertat efficere finis potiendi aliter extremum instructus respirare efficerent numquidnam propterea. Miserum urbes, expedire dignissimos in quicquam, saluto rhoncus cognosci evolutio. Incidunt factorum laudatum angoribus congressus legendi mutans eum evolvendis. Altera metuque dictum oderit efficeret honestum graecis inpendente persecuti. Accessio respondendum, consequentium certa facile suspicio concordia, vestra senectutem amotio. 
+
+Amicitia elaboraret viverra ipsa moderatio clarorum coercendi. Terentianus rationis culpa augendas transferre. Fastidium infinitis, alii dicere utuntur fusce sane. Saluti tum nomini iniucundus patre commodis male amarissimam angere misisti per. Audeam suis laboramus etiamsi intercapedo adversantur. Hostis desistunt, indignius referuntur atque audiebam dis antiquis, urbane facilius. 
+
+Displicet dices utilitas lacus expedita scaevolam succumbere iudicante praetermittatur, artis. Corrigere audiam cognosci andriam lucilius vehicula finxerat legat bene. Condimentum chrysippo natus senectutem elegans egestas didicisse fortunae consuevit. Mox utrumvis, argumentandum coniunctione adoptionem conversam. Atque evolutio leguntur manum reliquaque reprehensiones, secundum praetermittatur putavisset aperta dicere. Isdem eruditus interdictum chremes constituto, putarent accusantium istam venustate timiditatem, invitat. Mihi consectetuer virtutes, unum torquentur vituperari homine. Diesque existimo imperdiet delectatum voce sequimur quaerendi. Fidelissimae sicut isti ponendam, temeritas veritus amici firmissimum muniti exquisitaque me. 
+
+Tamquam concordia dum mi accedere fuisset incorrupte verbis arbitrantur rationis. Placerat evolvendis intus miseram etsi occulta. Facerem quaeritur amici corporis voluptates. Inermis voluptatibus varias amplificarique claudicare possunt amputata, videamus concessum inpendente dicant. Sem aperiam arridens invenerit appellant temperantiam ita intellegebat. Coerceri seiungi familiarem paene sole praetermissum percipiatur aliud imitarentur porro. Libidinibus aptent eventurum fermentum rebus reiciendis praeterierunt contenta una habeat. Incidunt iracundia ponderum ipse reliquarum, fuissent plerumque ipsa sapientia quidam. 
+
+Conducunt aegritudines fecisse voce quo efficeret etsi congressus accedis. Utrisque donec vetuit ullius profecto bestiae remissius physico magnitudinem. Concupiscunt meminit massa medeam efficeretur. Accusata animadversionis partiendo natura iusteque. Consentientis superstitio quantaque futurove politus apertam. Rogatiuncula multavit notae artem platonis tranquilli. Deserere exhorrescere bene leniat saepti depulsa, simulent civitas bene graeco. 
+
+Vestra mirari transferrem veritus privatione inportuno interdum poetis importari numeranda animum. Depravatum eademque idem iniucundus existimo, diis maximo ratione saxum. Aeque alii ferrentur conscientia vias, laboriosam adversantur delectatum correcta. Neglegentur controversia, cohaerescant via plus plura torquent. Erant eademque memoriter confidere certissimam nostro efficiatur te inculta utilitas pertinax. 
+
+Aegritudo malarum coerceri certa clamat, labore. Apte caret fortitudo foris verum. Voluptatem oblivione earum lacus, epicuro, natum dictumst aptent. Fruitur defendere poterimus, referenda delectatio aliquem tractatas quoque, via. Putanda dicebas importari male laboribus. Praeclara labore alias divinum firmissimum calere duce, assentior ero. 
+
+Depravatum imperdiet quisque videmus graecum posset maiestatis generibusque negarent. Sem partiendo videro horum diceret habere stultorum nondum. Scelerisque audiam permanentes diligant torquatus triarius. Certissimam improbis crudelis graecum variari eloquentiam quot. Comit suis singulis mauris legendus primum. Fortunae meo inquit molestiam gaudere seiungi. Fabulas turpis, fama pellat sedatio. Memoriter ea doloremque cognitione abducat, condimentum contenta linguam cognomen purus utinam. Referri solemus fructuosam, voluptates, notae occulta maiora aliquo chaere. 
+
+Doctus evertitur has finitas d omnis spatio penatibus aut sedulitatem. Patiatur diuturnitatem obcaecati conciliant distinguantur ius aequum pellat facilius probo miserius. Unum tempor sit insequitur legimus ludus lectus optimum. Iudicant magnum innumerabiles dignitatis ipsam sol frequenter abducat. Ex nullae continens tota tarentinis. Conficiuntur tu honeste, legantur etiam sensum firmissimum nescio, tellus splendore, perspici. Adversarium numquidnam de, domo, soliditatem pacto praetulerit collegisti provincias.
+        <!-- pre 입력한 그대로 출력하는 것 -->
+    </pre>
+
+    <!-- 레이어 팝업창(가장 위 혹은 가장 아래 작성) -->
+    <div id ="notice" class ="popup">
+        <h1>전산 서비스 지연에 따른 대고객 사과문</h1>
+        <ul>
+            <li>저희 페이지를 찾아주신 고객님께 진심으로 사과의 말씀드립니다.<br>현재 발생한 전산시스템의 장애로 금융거래가 중단된 상황입니다.<br>다시한번 불편을 끼쳐 진심으로 사죄드립니다.</li>
+            
+        </ul>
+        <!-- 이 div에 이미지도 같이 넣으면 두개가 한번에 없어지기 때문에, div공간을 하나 더 만들어서 사용해야함 -->
+        <button>닫기</button>
+        <!-- <button onclick="javascript:window.close();">닫기</button>
+        팝업창 띄울떄 필요함, 현장에서는 잘 안씀 -->
+    </div>
+
+    <div id="notice1">
+        <img src="popup_01.jpg" alt="팝업창">
+        <button>닫기</button>
+    </div>    
+
+    <script>
+        //Btn - 버튼
+        let closeBtn = document.querySelector('.popup > button');
+        
+        closeBtn.addEventListener('click', function(){
+            document.querySelector('.popup').style.display='none';
+            document.querySelector('body').style.background='#fff';
+            // document.querySelector('.popup' -> -를).style.display='none' -> 이렇게;
+        });
+
+        let CloseeBtn = document.querySelector('#notice1 > button');
+
+        CloseeBtn.addEventListener('click', function(){
+            document.querySelector('#notice1').style.display='none';
+        })
+    </script>
+    
+    
+</body>
+</html>
